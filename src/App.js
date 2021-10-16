@@ -1,10 +1,10 @@
 import React from 'react';
-import Nav from './components/Nav';
+import { StyledNav } from './components/styled-components/Nav.style';
 
 function App() {
   return (
     <div className="App">
-      <Nav />
+      <StyledNav />
     </div>
   );
 }

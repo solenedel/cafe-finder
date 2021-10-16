@@ -1,8 +1,9 @@
 import React from 'react';
 
-const Nav = () => {
+// eslint-disable-next-line
+const Nav = ({ className }) => {
   return (
-    <nav>
+    <nav className={className}>
       <div className="logo">café finder</div>
       <ul>
         <li>Login</li>
