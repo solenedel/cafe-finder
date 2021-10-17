@@ -11,6 +11,7 @@ export const GlobalStyles = createGlobalStyle`
     div#logo {
       font-size: 45px;
       font-family: 'IBM Plex Serif', serif; 
+      margin-left: 20px;
     }
 
     li, p, div {
@@ -19,6 +20,12 @@ export const GlobalStyles = createGlobalStyle`
 
     li {
       list-style-type: none;
+      transition: color 0.4s;
+
+      &:hover {
+        color: #FCA4B5;
+        transition: color 0.4s;
+      }
     }
   }
 `;
