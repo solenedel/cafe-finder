@@ -1,6 +1,6 @@
 /* eslint-disable import/prefer-default-export */
 import { createGlobalStyle } from 'styled-components';
-import { colorVars } from './css-variables';
+import { colorVars, fontVars } from './css-variables';
 
 export const GlobalStyles = createGlobalStyle`
   body {
@@ -10,12 +10,12 @@ export const GlobalStyles = createGlobalStyle`
 
     div#logo {
       font-size: 45px;
-      font-family: 'IBM Plex Serif', serif; 
+      font-family: ${fontVars.titleFont}; 
       margin-left: 20px;
     }
 
     li, p, div {
-      font-family: 'Urbanist', sans-serif;
+      font-family: ${fontVars.mainFont};
     }
 
     li {
