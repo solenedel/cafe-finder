@@ -4,7 +4,7 @@ import React from 'react';
 const Nav = ({ className }) => {
   return (
     <nav className={className}>
-      <div className="logo">café finder</div>
+      <div id="logo">Café Finder</div>
       <ul>
         <li>Login</li>
         <li>Favourites</li>
