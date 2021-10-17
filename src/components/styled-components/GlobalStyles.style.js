@@ -4,7 +4,7 @@ import { createGlobalStyle } from 'styled-components';
 
 export const GlobalStyles = createGlobalStyle`
   body {
-    background-color: cornflowerblue;
+    background-color: #f2dcc4;
     margin: 0px;
     padding: 0px;
 
@@ -15,6 +15,10 @@ export const GlobalStyles = createGlobalStyle`
 
     li, p, div {
       font-family: 'Urbanist', sans-serif;
+    }
+
+    li {
+      list-style-type: none;
     }
   }
 `;
