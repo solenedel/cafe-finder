@@ -1,12 +1,12 @@
+/* eslint-disable import/prefer-default-export */
 import styled from 'styled-components';
 import Nav from '../Nav';
-
-/* eslint-disable import/prefer-default-export */
+import { colorVars } from './css-variables';
 
 export const StyledNav = styled(Nav)`
-  background-color: #5a3924;
+  background-color: ${colorVars.primaryDarkBrown};
   height: 90px;
-  color: #f2dcc4;
+  color: ${colorVars.primaryLightBrown};
 
   & #nav-flexbox {
     display: flex;
@@ -21,6 +21,12 @@ export const StyledNav = styled(Nav)`
     & li {
       margin-right: 30px;
       font-size: 28px;
+      transition: color 0.4s;
+
+      &:hover {
+        color: ${colorVars.pinkHover};
+        transition: color 0.4s;
+      }
     }
   }
 `;

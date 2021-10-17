@@ -1,10 +1,10 @@
-import { createGlobalStyle } from 'styled-components';
-
 /* eslint-disable import/prefer-default-export */
+import { createGlobalStyle } from 'styled-components';
+import { colorVars } from './css-variables';
 
 export const GlobalStyles = createGlobalStyle`
   body {
-    background-color: #f2dcc4;
+    background-color: ${colorVars.primaryLightBrown};
     margin: 0px;
     padding: 0px;
 
@@ -20,12 +20,6 @@ export const GlobalStyles = createGlobalStyle`
 
     li {
       list-style-type: none;
-      transition: color 0.4s;
-
-      &:hover {
-        color: #FCA4B5;
-        transition: color 0.4s;
-      }
     }
   }
 `;
