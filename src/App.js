@@ -2,14 +2,18 @@ import React from 'react';
 import { StyledNav } from './components/styled-components/Nav.style';
 import { GlobalStyles } from './components/styled-components/GlobalStyles.style';
 import { StyledHomePage } from './components/styled-components/HomePage.style';
+import { AppContainer } from './components/styled-components/AppContainer';
+import { PageContainer } from './components/styled-components/PageContainer';
 
 function App() {
   return (
-    <div className="App">
+    <AppContainer>
       <GlobalStyles />
       <StyledNav />
-      <StyledHomePage />
-    </div>
+      <PageContainer>
+        <StyledHomePage />
+      </PageContainer>
+    </AppContainer>
   );
 }
 
