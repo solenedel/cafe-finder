@@ -8,6 +8,8 @@ export const GlobalStyles = createGlobalStyle`
     margin: 0px;
     padding: 0px;
     overflow-x: hidden;
+    height: 100%;
+    min-height: 100%;
 
     div#logo {
       font-size: 45px;
