@@ -1,10 +1,11 @@
 import React from 'react';
 
-const HomePage = () => {
+// eslint-disable-next-line
+const HomePage = ({ className }) => {
   return (
-    <main id="home-page-container">
+    <main className={className} id="home-page-container">
       <div>Find cafés nearby.</div>
-      <img src="../../public/images/coffee-1.png" alt="coffee icon" />
+      <img src="./images/coffee-1.png" alt="coffee icon" />
     </main>
   );
 };

@@ -7,6 +7,7 @@ export const GlobalStyles = createGlobalStyle`
     background-color: ${colorVars.primaryLightBrown};
     margin: 0px;
     padding: 0px;
+    overflow-x: hidden;
 
     div#logo {
       font-size: 45px;
