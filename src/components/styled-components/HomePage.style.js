@@ -1,10 +1,10 @@
 /* eslint-disable import/prefer-default-export */
 import styled from 'styled-components';
 import HomePage from '../HomePage';
-// import { colorVars } from './css-variables';
+import { colorVars } from './css-variables';
 
 export const StyledHomePage = styled(HomePage)`
-  border: solid red 3px;
+  margin-top: 35px;
   height: 100vh;
   width: fit-content;
   display: flex;
@@ -12,10 +12,12 @@ export const StyledHomePage = styled(HomePage)`
   align-items: center;
 
   & img {
-    width: 150px;
+    width: 100px;
   }
 
   & div {
     font-size: 25px;
+    margin-bottom: 30px;
+    color: ${colorVars.primaryDarkBrown};
   }
 `;
