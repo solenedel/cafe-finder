@@ -4,12 +4,22 @@ import React from 'react';
 const Footer = ({ className }) => {
   return (
     <footer className={className}>
+      <h4>Contact us</h4>
       <div id="footer-content">
-        <h4>Contact us</h4>
         <ul>
           <li>cafe.finder@mail.com</li>
-          <li>777 888 9999</li>
+          <div className="credits">
+            {/* eslint-disable-next-line */}
+          Icons by <a href="https://www.freepik.com" title="Freepik">Freepik </a>
+            {/* eslint-disable-next-line */}
+          from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com </a> 
+          </div>
         </ul>
+        <div className="social-icons">
+          <i className="fab fa-instagram" />
+          <i className="fab fa-twitter" />
+          <i className="fab fa-facebook" />
+        </div>
       </div>
     </footer>
   );

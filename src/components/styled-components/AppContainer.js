@@ -2,5 +2,5 @@
 import styled from 'styled-components';
 
 export const AppContainer = styled.div`
-  border: solid blue 3px;
+  /* border: solid blue 3px; */
 `;

@@ -5,16 +5,17 @@ import { colorVars, fontVars } from './css-variables';
 
 export const StyledFooter = styled(Footer)`
   background-color: ${colorVars.primaryDarkBrown};
-  height: 100px;
+  height: 115px;
   color: ${colorVars.primaryLightBrown};
   /* border: solid red 3px; */
 
   & h4 {
-    font-size: 18px;
+    font-size: 20px;
     font-weight: 700;
     font-family: ${fontVars.titleFont};
     letter-spacing: 1px;
-    margin: 15px 0 10px 0;
+    margin: 30px 0 10px 20px;
+    padding-top: 15px;
   }
 
   & ul {
@@ -23,14 +24,41 @@ export const StyledFooter = styled(Footer)`
 
     & li {
       margin-bottom: 5px;
-      font-size: 15px;
+      font-size: 18px;
+    }
+
+    & div.credits {
+      font-size: 14px;
+
+      & a,
+      a:hover,
+      a:active {
+        color: ${colorVars.primaryLightBrown};
+      }
     }
   }
 
   #footer-content {
     padding-left: 20px;
     display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  & .social-icons {
+    display: flex;
+    padding-right: 40px;
+
+    & i {
+      font-size: 40px;
+      margin-left: 20px;
+      opacity: 0.85;
+      transition: color 0.4s;
+
+      &:hover {
+        color: ${colorVars.pinkHover};
+        transition: color 0.4s;
+      }
+    }
   }
 `;
