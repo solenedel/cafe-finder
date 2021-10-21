@@ -1,10 +1,8 @@
 import React from 'react';
-import { Map, GoogleApiWrapper } from 'google-maps-react';
+import { GoogleMap } from 'react-google-maps';
 
-const MapContainer = () => {
-  return (
-    
-  );
+const Map = () => {
+  return <GoogleMap />;
 };
 
-export default MapContainer;
+export default Map;
