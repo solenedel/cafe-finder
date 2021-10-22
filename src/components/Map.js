@@ -47,6 +47,7 @@ const Map = () => {
   return (
     <>
       <h3>Cafés ☕</h3>
+      <Search />
       <GoogleMap
         mapContainerStyle={mapContainerStyle}
         zoom={11}
@@ -55,6 +56,19 @@ const Map = () => {
       />
     </>
   );
+};
+
+const Search = () => {
+  const { ready, value, suggestions: {status, data}, setValue, clearSuggestion } = usePlacesAutocomplete({
+    requestOptions: {
+      location: {
+        lat: () => 49.24966, 
+        lng: () => -123.11934
+      }, 
+      radius: 30 * 1000 // in meters
+    } 
+
+  })
 };
 
 export default Map;
