@@ -1,7 +1,7 @@
 /* eslint-disable import/prefer-default-export */
 import styled from 'styled-components';
 import { HomePage } from '../HomePage';
-import { colorVars } from './css-variables';
+import { colorVars, fontVars } from './css-variables';
 
 // styles for HomePage component
 // includes the google map, search form, etc
@@ -25,12 +25,42 @@ export const StyledHomePage = styled(HomePage)`
   }
 
   & #map-div {
-    border: solid 2.5px ${colorVars.primaryDarkBrown};
     margin-top: 30px;
   }
 
   & #search-section {
-    border: solid blue 3px;
-    margin: 50px 0 45px 0;
+    /* border: solid blue 2px; */
+    font-family: ${fontVars.mainFont};
+    margin: 50px 0 20px 0;
+
+    & input {
+      height: 28px;
+      width: 200px;
+      border: solid 2px ${colorVars.primaryDarkBrown};
+      border-radius: 4px;
+      font-size: 18px;
+      color: ${colorVars.darkPink};
+
+      &::placeholder {
+        color: ${colorVars.primaryDarkBrown};
+        opacity: 0.6;
+      }
+    }
+
+    & button {
+      margin-left: 20px;
+      background-color: ${colorVars.primaryDarkBrown};
+      color: ${colorVars.primaryLightBrown};
+      font-size: 20px;
+      border-radius: 5px;
+      height: 30px;
+      width: fit-content;
+      transition: color 0.4s;
+
+      &:hover {
+        color: ${colorVars.pinkHover};
+        transition: color 0.4s;
+      }
+    }
   }
 `;
