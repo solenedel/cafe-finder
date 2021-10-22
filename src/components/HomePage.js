@@ -1,8 +1,23 @@
 import React from 'react';
+import { GoogleMap, useLoadScript, Marker, InfoWindow } from '@react-google-maps/api';
 import { WrappedMap } from './Map';
 
 // eslint-disable-next-line
 export const HomePage = ({ className }) => {
+  const libraries = ['places'];
+
+  // load Google Map scripts
+
+  const { isLoaded, loadError } = useLoadScript({
+    googleMapsApiKey: process.env.REACT_APP_API_KEY,
+    libraries,
+  });
+
+  if (loadError) return 'Error loading maps';
+  if (!isLoaded) return 'Loading maps...';
+
+  // finished loading Google Map scripts
+
   return (
     <main className={className} id="home-page-container">
       <div>Find cafés near you.</div>
