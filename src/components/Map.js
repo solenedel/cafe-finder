@@ -1,4 +1,5 @@
 import React from 'react';
+import mapStyles from './mapStyles';
 // eslint-disable-next-line
 import { GoogleMap, useLoadScript, Marker, InfoWindow } from '@react-google-maps/api';
 
@@ -15,6 +16,8 @@ const Map = () => {
     lng: -123.11934,
   };
 
+  const options = { styles: mapStyles };
+
   // load Google Map scripts
 
   const { isLoaded, loadError } = useLoadScript({
@@ -27,7 +30,9 @@ const Map = () => {
 
   // finished loading Google Map scripts
 
-  return <GoogleMap mapContainerStyle={mapContainerStyle} zoom={8} center={center} />;
+  return (
+    <GoogleMap mapContainerStyle={mapContainerStyle} zoom={11} center={center} options={options} />
+  );
 };
 
 export default Map;
