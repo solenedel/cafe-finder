@@ -1,6 +1,6 @@
 /* eslint-disable import/prefer-default-export */
 import styled from 'styled-components';
-import HomePage from '../HomePage';
+import { HomePage } from '../HomePage';
 import { colorVars } from './css-variables';
 
 export const StyledHomePage = styled(HomePage)`

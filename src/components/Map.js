@@ -1,8 +1,9 @@
 import React from 'react';
-import { GoogleMap } from 'react-google-maps';
+import { GoogleMap, withScriptjs, withGoogleMap } from 'react-google-maps';
 
-const Map = () => {
+export const Map = () => {
   return <GoogleMap defaultZoom={10} defaultCenter={{ lat: 12, lng: 12 }} />;
 };
 
-export default Map;
+// WrappedMap is the component we want to insert into the App
+export const WrappedMap = withScriptjs(withGoogleMap(Map));
