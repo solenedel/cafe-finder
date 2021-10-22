@@ -24,10 +24,6 @@ export const StyledHomePage = styled(HomePage)`
     color: ${colorVars.primaryDarkBrown};
   }
 
-  & #map-div {
-    margin-top: 30px;
-  }
-
   & #search-section {
     font-family: ${fontVars.mainFont};
     margin: 50px 0 20px 0;

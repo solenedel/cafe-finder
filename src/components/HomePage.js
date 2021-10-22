@@ -15,9 +15,7 @@ export const HomePage = ({ className }) => {
           </button>
         </form>
       </section>
-      <div id="map-div">
-        <Map />
-      </div>
+      <Map />
     </main>
   );
 };
