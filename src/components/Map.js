@@ -1,7 +1,17 @@
+/* eslint-disable */
 import React from 'react';
-import mapStyles from './mapStyles';
-// eslint-disable-next-line
 import { GoogleMap, useLoadScript, Marker, InfoWindow } from '@react-google-maps/api';
+import usePlacesAutocomplete, { getGeocode, getLatLng } from 'use-places-autocomplete';
+import {
+  Combobox,
+  ComboboxInput,
+  ComboboxPopover,
+  ComboboxList,
+  ComboboxOption,
+  ComboboxOptionText,
+} from '@reach/combobox';
+import mapStyles from './mapStyles';
+import '@reach/combobox/styles.css';
 
 // eslint-disable-next-line
 const Map = () => {
