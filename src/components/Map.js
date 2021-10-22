@@ -7,7 +7,7 @@ const Map = () => {
   const libraries = ['places'];
   const mapContainerStyle = {
     width: '80vw',
-    height: '100vh',
+    height: '80vh',
   };
   const center = {
     lat: 49.24966,

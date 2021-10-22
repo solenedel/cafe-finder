@@ -15,7 +15,7 @@ export const HomePage = ({ className }) => {
           </button>
         </form>
       </section>
-      <div id="map-div" style={{ width: '80vw', height: '100vh' }}>
+      <div id="map-div">
         <Map />
       </div>
     </main>

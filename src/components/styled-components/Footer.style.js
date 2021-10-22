@@ -6,15 +6,16 @@ import { colorVars, fontVars } from './css-variables';
 export const StyledFooter = styled(Footer)`
   background-color: ${colorVars.primaryDarkBrown};
   height: 115px;
+  width: 100vw;
   color: ${colorVars.primaryLightBrown};
-  /* border: solid red 3px; */
+  position: static;
 
   & h4 {
     font-size: 20px;
     font-weight: 700;
     font-family: ${fontVars.titleFont};
     letter-spacing: 1px;
-    margin: 30px 0 10px 20px;
+    margin: 5px 0 10px 20px;
     padding-top: 15px;
   }
 
