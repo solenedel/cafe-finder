@@ -26,6 +26,7 @@ export const StyledHomePage = styled(HomePage)`
     left: 13%;
     z-index: 10;
     font-size: 25px;
+    color: ${colorVars.primaryDarkBrown};
   }
 
   & div {
