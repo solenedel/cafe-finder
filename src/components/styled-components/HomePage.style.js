@@ -18,6 +18,16 @@ export const StyledHomePage = styled(HomePage)`
     width: 100px;
   }
 
+  & h3 {
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: 70%;
+    left: 13%;
+    z-index: 10;
+    font-size: 25px;
+  }
+
   & div {
     font-size: 25px;
     margin-bottom: 30px;

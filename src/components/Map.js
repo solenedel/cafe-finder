@@ -16,7 +16,11 @@ const Map = () => {
     lng: -123.11934,
   };
 
-  const options = { styles: mapStyles };
+  const options = {
+    styles: mapStyles,
+    disableDefaultUI: true,
+    zoomControl: true,
+  };
 
   // load Google Map scripts
 
@@ -31,7 +35,15 @@ const Map = () => {
   // finished loading Google Map scripts
 
   return (
-    <GoogleMap mapContainerStyle={mapContainerStyle} zoom={11} center={center} options={options} />
+    <>
+      <h3>Cafés ☕</h3>
+      <GoogleMap
+        mapContainerStyle={mapContainerStyle}
+        zoom={11}
+        center={center}
+        options={options}
+      />
+    </>
   );
 };
 
