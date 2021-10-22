@@ -29,17 +29,22 @@ export const StyledHomePage = styled(HomePage)`
   }
 
   & #search-section {
-    /* border: solid blue 2px; */
     font-family: ${fontVars.mainFont};
     margin: 50px 0 20px 0;
 
     & input {
       height: 28px;
       width: 200px;
-      border: solid 2px ${colorVars.primaryDarkBrown};
+      border: none;
       border-radius: 4px;
       font-size: 18px;
-      color: ${colorVars.darkPink};
+      color: ${colorVars.primaryDarkBrown};
+      transition: background-color 0.4s;
+
+      &:hover {
+        background-color: ${colorVars.mediumBrown};
+        transition: background-color 0.4s;
+      }
 
       &::placeholder {
         color: ${colorVars.primaryDarkBrown};

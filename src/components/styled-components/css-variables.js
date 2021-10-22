@@ -4,6 +4,7 @@ const colorVars = {
   primaryLightBrown: '#f2dcc4',
   pinkHover: '#fca4b5',
   darkPink: '#D88091',
+  mediumBrown: '#D7A484',
 };
 
 // fonts
