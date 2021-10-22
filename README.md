@@ -15,6 +15,7 @@ Find cafés near you, with ratings from other users. Save your favourite cafés 
 ### To do 
 - search bar (home page)
 - radius option to map search (home page)
+- remove map options: satellite, keyboard shortcuts, etc (home page)
 
 
 ### resources 

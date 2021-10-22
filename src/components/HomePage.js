@@ -7,7 +7,7 @@ export const HomePage = ({ className }) => {
     <main className={className} id="home-page-container">
       <div>Find cafés near you.</div>
       <img src="./images/coffee-1.png" alt="coffee icon" />
-      <div style={{ width: '100vw', height: '100vh' }}>
+      <div id="map-div" style={{ width: '80vw', height: '100vh' }}>
         <WrappedMap
           googleMapURL={`https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=${process.env.REACT_APP_API_KEY}`}
           loadingElement={<div style={{ height: '100%' }} />}

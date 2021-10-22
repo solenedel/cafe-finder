@@ -5,5 +5,5 @@ export const Map = () => {
   return <GoogleMap defaultZoom={11} defaultCenter={{ lat: 49.24966, lng: -123.11934 }} />;
 };
 
-// WrappedMap is the component we want to insert into the App
+// WrappedMap is inserted into HomePage component
 export const WrappedMap = withScriptjs(withGoogleMap(Map));
