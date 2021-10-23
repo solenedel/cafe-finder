@@ -14,8 +14,8 @@ CREATE TABLE cafes (
   id SERIAL PRIMARY KEY NOT NULL,
   cafe_name VARCHAR(255) NOT NULL,
   has_wifi BOOLEAN,
-  open_24_hours BOOLEAN,
-  organic_tea_coffee BOOLEAN,
+  is_open_24_hours BOOLEAN,
+  has_organic_tea_coffee BOOLEAN,
   noise_level INTEGER,
   seating_space INTEGER,
 );
@@ -27,3 +27,9 @@ CREATE TABLE favorites (
   user_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
   cafe_id INTEGER REFERENCES cafes(id) ON DELETE CASCADE,
 );
+
+
+-- use knex for queries ?
+-- database is not === results returned by google. 
+-- Only save a cafe to the database if:
+-- at least one user has favorited the cafe, or it has received some user rating (ex. noise level)

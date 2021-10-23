@@ -20,3 +20,4 @@ Find cafés near you, with ratings from other users. Save your favourite cafés 
 
 ### resources 
 - [google maps react tutorial](https://www.youtube.com/watch?v=Pf7g32CwX_s)
+- [google maps react 2](https://www.youtube.com/watch?v=WZcxJGmLbSo)

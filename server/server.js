@@ -1,6 +1,8 @@
 // --------------------------- Express server ------------------------------ //
 const express = require('express');
 
+require('dotenv').config();
+
 // Express configuration
 const app = express();
 const PORT = 8081;
