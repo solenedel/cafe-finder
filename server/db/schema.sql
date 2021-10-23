@@ -21,7 +21,7 @@ CREATE TABLE cafes (
 );
 -- NOTE: noise_level and seating_space are integers from 1 to 5 (stars system)
 
--- Join table
+-- Join table: many to many (many users can have many favourite cafes)
 CREATE TABLE favorites (
   id SERIAL PRIMARY KEY NOT NULL,
   user_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
