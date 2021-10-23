@@ -29,6 +29,16 @@ export const StyledHomePage = styled(HomePage)`
     color: ${colorVars.primaryDarkBrown};
   }
 
+  /* combobox search field */
+  & .search {
+    position: absolute;
+    top: 70%;
+    left: 70%;
+    z-index: 11;
+    margin: 0;
+    padding: 0;
+  }
+
   & div {
     font-size: 25px;
     margin-bottom: 30px;

@@ -1,7 +1,13 @@
+/* eslint-disable */
 import React from 'react';
 import { GoogleMap, useLoadScript } from '@react-google-maps/api';
 import usePlacesAutocomplete from 'use-places-autocomplete';
-import { Combobox, ComboboxInput } from '@reach/combobox';
+import {
+  Combobox,
+  ComboboxInput,
+  ComboboxPopover,
+  ComboboxOption,
+} from '@reach/combobox';
 import mapStyles from './mapStyles';
 import '@reach/combobox/styles.css';
 
@@ -41,6 +47,7 @@ const Map = () => {
   return (
     <>
       <h3>Cafés ☕</h3>
+      <Search />
       <GoogleMap
         mapContainerStyle={mapContainerStyle}
         zoom={11}
@@ -51,13 +58,13 @@ const Map = () => {
   );
 };
 
-/* eslint-disable */
 const Search = () => {
   const {
     ready,
     value,
     suggestions: { status, data },
     setValue,
+    // eslint-disable-next-line
     clearSuggestion,
   } = usePlacesAutocomplete({
     requestOptions: {
@@ -70,16 +77,24 @@ const Search = () => {
   });
 
   return (
-    <Combobox onSelect={(address) => console.log(address)}>
-      <ComboboxInput
-        value={value}
-        onChange={(e) => {
-          setValue(e.target.value);
-        }}
-        disabled={!ready}
-        placeholder="enter an address"
-      />
-    </Combobox>
+    <div className="search">
+      <Combobox onSelect={(address) => console.log(address)}>
+        <ComboboxInput
+          value={value}
+          onChange={(e) => {
+            setValue(e.target.value);
+          }}
+          disabled={!ready}
+          placeholder="enter an address"
+        />
+      </Combobox>
+      <ComboboxPopover>
+        {status === 'OK' &&
+          data.map(({ id, description }) => {
+            return <ComboboxOption key={id} value={description} />;
+          })}
+      </ComboboxPopover>
+    </div>
   );
 };
 
