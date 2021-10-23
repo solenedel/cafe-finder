@@ -1,17 +1,11 @@
-/* eslint-disable */
 import React from 'react';
-import { GoogleMap, useLoadScript, Marker, InfoWindow } from '@react-google-maps/api';
-import usePlacesAutocomplete, { getGeocode, getLatLng } from 'use-places-autocomplete';
-import {
-  Combobox,
-  ComboboxInput,
-  ComboboxPopover,
-  ComboboxList,
-  ComboboxOption,
-  ComboboxOptionText,
-} from '@reach/combobox';
+import { GoogleMap, useLoadScript } from '@react-google-maps/api';
+import usePlacesAutocomplete from 'use-places-autocomplete';
+import { Combobox, ComboboxInput } from '@reach/combobox';
 import mapStyles from './mapStyles';
 import '@reach/combobox/styles.css';
+
+// { getGeocode, getLatLng }
 
 // eslint-disable-next-line
 const Map = () => {
@@ -47,7 +41,6 @@ const Map = () => {
   return (
     <>
       <h3>Cafés ☕</h3>
-      <Search />
       <GoogleMap
         mapContainerStyle={mapContainerStyle}
         zoom={11}
@@ -58,17 +51,36 @@ const Map = () => {
   );
 };
 
+/* eslint-disable */
 const Search = () => {
-  const { ready, value, suggestions: {status, data}, setValue, clearSuggestion } = usePlacesAutocomplete({
+  const {
+    ready,
+    value,
+    suggestions: { status, data },
+    setValue,
+    clearSuggestion,
+  } = usePlacesAutocomplete({
     requestOptions: {
       location: {
-        lat: () => 49.24966, 
-        lng: () => -123.11934
-      }, 
-      radius: 30 * 1000 // in meters
-    } 
+        lat: () => 49.24966,
+        lng: () => -123.11934,
+      },
+      radius: 30 * 1000, // in meters
+    },
+  });
 
-  })
+  return (
+    <Combobox onSelect={(address) => console.log(address)}>
+      <ComboboxInput
+        value={value}
+        onChange={(e) => {
+          setValue(e.target.value);
+        }}
+        disabled={!ready}
+        placeholder="enter an address"
+      />
+    </Combobox>
+  );
 };
 
 export default Map;
