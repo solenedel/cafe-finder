@@ -6,5 +6,5 @@ const app = express();
 const PORT = 8081;
 
 app.listen(PORT, () => {
-  return `Express listening on port ${PORT}`;
+  console.log(`Express listening on port ${PORT}`);
 });
