@@ -1,7 +1,7 @@
 // ----------------- Back end routers are here -------------------- //
 
-const searchRouter = require('./searchRoutes');
+// const searchRouter = require('./searchRouter');
 
-module.exports = {
-  searchRouter,
-};
+// module.exports = {
+//   searchRouter,
+// };
