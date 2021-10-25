@@ -1,6 +1,7 @@
 // -------------------------- search route ----------------------------- //
 
 // This route uses the Google Places API to search for cafes in a location specified by the user
+
 const express = require('express');
 require('dotenv').config();
 
@@ -18,4 +19,15 @@ const cafeSearchHelper = (location) => {
     .catch((error) => error.message);
 };
 
-module.exports = { cafeSearchHelper };
+// initialise router for get /api/search
+// eslint-disable-next-line
+router.get('/', (req, res) => {
+  const { location } = req.query;
+
+  if (!location) {
+    console.log('user did not enter any location');
+    return res.json([]);
+  }
+});
+
+module.exports = { cafeSearchHelper, router };

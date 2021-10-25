@@ -1,6 +1,7 @@
 // --------------------------- Express server ------------------------------ //
+
 const express = require('express');
-const { cafeSearchHelper } = require('./routes/search');
+const { cafeSearchHelper } = require('./routes/searchRoutes');
 
 const dotenvPath = '../.env';
 require('dotenv').config({ path: dotenvPath });
@@ -11,5 +12,6 @@ const PORT = 8081;
 
 app.listen(PORT, () => {
   console.log(`Express listening on port ${PORT}`);
-  cafeSearchHelper('vancouver');
+
+  cafeSearchHelper('Vancouver');
 });
