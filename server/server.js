@@ -19,54 +19,10 @@ const dbParams = require('./db/dbParams');
 const db = new Pool(dbParams);
 db.connect(() => console.log('✅ connected to db'));
 
-/*
-// ------------------------ search routes ------------------------- //
+// test query:
+db.query('SELECT * FROM users;').then((data) => console.log(data.rows));
 
-// helper: make request to Google Places API
-const cafeSearchHelper = (location) => {
-  return axios
-    .get(
-      `https://maps.googleapis.com/maps/api/place/textsearch/json?query=cafes%20in%20${location}&key=${process.env.REACT_APP_API_KEY}`
-    )
-    .then((res) => res.data)
-    .catch((error) => error.message);
-};
-
-// GET: /api/search
-
-app.get('/api/search', (req, res) => {
-  // const { location } = req.query;
-  const location = 'Vancouver';
-
-  if (!location) {
-    res.json([]);
-    return 'user did not enter any location';
-  }
-
-  // make api calls to search for cafes
-  cafeSearchHelper(location)
-    .then((data) => {
-      const cafeResultsList = data.results.map((cafe) => {
-        return axios.get(
-          `https://maps.googleapis.com/maps/api/place/${cafe.place_id}&key=${process.env.REACT_APP_API_KEY}`
-        );
-      });
-      return Promise.all(cafeResultsList);
-    })
-    .then((response) => {
-      // filter results
-      const parsedData = response.map((r) => {
-        console.log('RESULT ------ : ', r);
-        return {
-          id: r.data.place_id,
-          name: r.data.name,
-          location: r.data.location,
-        };
-      });
-      res.json(parsedData);
-    })
-    .catch((error) => console.log('ERROR: ', error));
-}); */
+// -------------------- Login / logout routes -------------------- //
 
 // start listening for requests
 app.listen(PORT, () => {
