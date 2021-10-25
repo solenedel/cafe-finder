@@ -10,6 +10,12 @@ require('dotenv').config({ path: dotenvPath });
 const app = express();
 const PORT = 8081;
 
+// import external routes from routes/index.js
+const { searchRouter } = require('./routes/index');
+
+// use routers
+app.use('/api/search', searchRouter());
+
 app.listen(PORT, () => {
   console.log(`Express listening on port ${PORT}`);
 
