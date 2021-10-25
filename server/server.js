@@ -2,7 +2,7 @@
 
 const express = require('express');
 // const { cafeSearchHelper } = require('./routes/searchRouter');
-const axios = require('axios');
+// const axios = require('axios');
 
 const dotenvPath = '../.env';
 require('dotenv').config({ path: dotenvPath });
@@ -11,6 +11,7 @@ require('dotenv').config({ path: dotenvPath });
 const app = express();
 const PORT = 8081;
 
+/*
 // ------------------------ search routes ------------------------- //
 
 // helper: make request to Google Places API
@@ -57,11 +58,11 @@ app.get('/api/search', (req, res) => {
       res.json(parsedData);
     })
     .catch((error) => console.log('ERROR: ', error));
-});
+}); */
 
 // start listening for requests
 app.listen(PORT, () => {
   console.log(` ✅ Express is listening on port ${PORT}`);
 
-  cafeSearchHelper('Vancouver');
+  // cafeSearchHelper('Vancouver');
 });
