@@ -10,22 +10,12 @@ const axios = require('axios');
 
 // helper: make request to Google Places API
 const cafeSearchHelper = (location) => {
-  return (
-    axios
-      // .get(
-      //   `https://maps.googleapis.com/maps/api/place/textsearch/json
-      // ?query=cafes%20in%20${location}
-      // &key=${process.env.REACT_APP_API_KEY}`
-      // )
-      .get(
-        `https://maps.googleapis.com/maps/api/place/textsearch/json?query=cafes%20in%20vancouver&key=KEY`
-      )
-      .catch((error) => error.message)
-  );
+  return axios
+    .get(
+      `https://maps.googleapis.com/maps/api/place/textsearch/json?query=cafes%20in%20${location}&key=${process.env.REACT_APP_API_KEY}`
+    )
+    .then((res) => console.log(res.data.results[0].name))
+    .catch((error) => error.message);
 };
-
-// TO DO: debug , api key undefined
-// console.log(process.env.REACT_APP_API_KEY);
-// console.log('process.env', process.env);
 
 module.exports = { cafeSearchHelper };
