@@ -11,6 +11,10 @@ require('dotenv').config({ path: dotenvPath });
 const app = express();
 const PORT = 8081;
 
+// PG database client/connection setup
+const { Pool } = require('pg');
+const dbParams = require('./db/db-params');
+
 /*
 // ------------------------ search routes ------------------------- //
 
