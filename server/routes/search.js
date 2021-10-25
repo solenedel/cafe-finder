@@ -18,7 +18,7 @@ const cafeSearchHelper = (location) => {
       // &key=${process.env.REACT_APP_API_KEY}`
       // )
       .get(
-        'https://maps.googleapis.com/maps/api/place/textsearch/json?query=cafes%20in%20vancouver&key=AIzaSyAq-xM4WyyvXIKjh0wKh8CMDyRI2iOPvmo'
+        `https://maps.googleapis.com/maps/api/place/textsearch/json?query=cafes%20in%20vancouver&key=KEY`
       )
       .catch((error) => error.message)
   );
