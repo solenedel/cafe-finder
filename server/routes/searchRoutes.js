@@ -15,19 +15,38 @@ const cafeSearchHelper = (location) => {
     .get(
       `https://maps.googleapis.com/maps/api/place/textsearch/json?query=cafes%20in%20${location}&key=${process.env.REACT_APP_API_KEY}`
     )
-    .then((res) => console.log(res.data.results[0].name))
+    .then((res) => console.log(res.data))
     .catch((error) => error.message);
 };
 
-// initialise router for get /api/search
-// eslint-disable-next-line
-router.get('/', (req, res) => {
-  const { location } = req.query;
+module.exports = () => {
+  // initialise router for: GET /api/search
+  router.get('/', (req, res) => {
+    const { location } = req.query;
 
-  if (!location) {
-    console.log('user did not enter any location');
-    return res.json([]);
-  }
-});
+    if (!location) {
+      console.log('user did not enter any location');
+      res.json([]);
+    }
+
+    // make api calls to search for cafes
+    cafeSearchHelper(location)
+      .then((data) => {
+        const cafeResultsList = data.results.map((cafe) => {
+          axios.get(
+            `https://maps.googleapis.com/maps/api/place/${cafe.place_id}&key=${process.env.REACT_APP_API_KEY}`
+          );
+          console.log('place_id: ', cafe.place_id);
+          return Promise.all(cafeResultsList);
+        });
+      })
+      .then((response) => {
+        // if filtering of results needs to happen, do it here.
+        console.log('response: ', response);
+      })
+      .catch((error) => error.message);
+  });
+  return router;
+};
 
 module.exports = { cafeSearchHelper, router };

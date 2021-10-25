@@ -16,8 +16,8 @@ const { searchRouter } = require('./routes/index');
 // use routers
 app.use('/api/search', searchRouter());
 
+// start listening for requests
 app.listen(PORT, () => {
-  console.log(`Express listening on port ${PORT}`);
-
+  console.log(` ✅ Express is listening on port ${PORT}`);
   cafeSearchHelper('Vancouver');
 });
