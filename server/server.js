@@ -13,7 +13,11 @@ const PORT = 8081;
 
 // PG database client/connection setup
 const { Pool } = require('pg');
-const dbParams = require('./db/db-params');
+const dbParams = require('./db/dbParams');
+
+// create new connection pool and connect to it
+const db = new Pool(dbParams);
+db.connect(() => console.log('✅ connected to db'));
 
 /*
 // ------------------------ search routes ------------------------- //
@@ -66,7 +70,7 @@ app.get('/api/search', (req, res) => {
 
 // start listening for requests
 app.listen(PORT, () => {
-  console.log(` ✅ Express is listening on port ${PORT}`);
+  console.log(`✅ Express is listening on port ${PORT}`);
 
   // cafeSearchHelper('Vancouver');
 });
