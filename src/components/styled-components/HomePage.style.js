@@ -1,7 +1,7 @@
 /* eslint-disable import/prefer-default-export */
 import styled from 'styled-components';
 import { HomePage } from '../HomePage';
-import { colorVars, fontVars } from './css-variables';
+import { colorVars, fontVars, mainButtonStyles } from './css-variables';
 
 // styles for HomePage component
 // includes the google map, search form, etc
@@ -61,13 +61,7 @@ export const StyledHomePage = styled(HomePage)`
 
     & button {
       margin-left: 20px;
-      background-color: ${colorVars.primaryDarkBrown};
-      color: ${colorVars.primaryLightBrown};
-      font-size: 20px;
-      border-radius: 5px;
-      height: 30px;
-      width: fit-content;
-      transition: color 0.4s;
+      @include ${mainButtonStyles};
 
       &:hover {
         color: ${colorVars.pinkHover};

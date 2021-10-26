@@ -13,4 +13,22 @@ const fontVars = {
   mainFont: `'Urbanist', sans-serif`,
 };
 
-module.exports = { colorVars, fontVars };
+// Mixins
+const mainButtonStyles = {
+  margin: `20px`,
+  backgroundColor: `${colorVars.primaryDarkBrown}`,
+  color: `${colorVars.primaryLightBrown}`,
+  fontSize: `20px`,
+  borderRadius: `5px`,
+  height: `30px`,
+  width: `fit-content`,
+  transition: `color 0.4s`,
+};
+
+// these styles are not working properly when imported as mixin
+const mainButtonHoverStyles = {
+  color: `${colorVars.pinkHover}`,
+  transition: `color 0.4s`,
+};
+
+module.exports = { colorVars, fontVars, mainButtonStyles, mainButtonHoverStyles };

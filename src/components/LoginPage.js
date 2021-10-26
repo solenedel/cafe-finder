@@ -1,14 +1,15 @@
 import React from 'react';
 
 // eslint-disable-next-line
-export const LoginPage = ({ className }) => {
+const LoginPage = ({ className }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
   };
 
   return (
     <main className={className} id="login-page-container">
-      <div>Login</div>
+      <p>Login</p>
+      <div id="no-account">Don&rsquo;t have an account? Sign up here!</div>
       <form onSubmit={handleSubmit} className="login-form">
         <div className="email-input">
           <i className="far fa-envelope" />
@@ -43,3 +44,5 @@ export const LoginPage = ({ className }) => {
     </main>
   );
 };
+
+export default LoginPage;

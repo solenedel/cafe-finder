@@ -6,7 +6,7 @@ import { StyledHomePage } from './components/styled-components/HomePage.style';
 import { AppContainer } from './components/styled-components/AppContainer';
 import { PageContainer } from './components/styled-components/PageContainer';
 import { StyledFooter } from './components/styled-components/Footer.style';
-import { LoginPage } from './components/LoginPage';
+import { StyledLoginPage } from './components/styled-components/LoginPage.style';
 
 function App() {
   return (
@@ -16,14 +16,14 @@ function App() {
         <StyledNav />
         <PageContainer>
           <Switch>
-            <Route path="/">
+            <Route exact path="/">
               <StyledHomePage />
             </Route>
             {/* <Route path="/favourites">
               <StyledFavsPage />
             </Route> */}
-            <Route path="/login">
-              <LoginPage />
+            <Route exact path="/login">
+              <StyledLoginPage />
             </Route>
           </Switch>
         </PageContainer>
