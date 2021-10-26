@@ -40,6 +40,8 @@ app.use(
 
 // -------------------- Login / logout routes -------------------- //
 
+// ---------------------------------------------------------------- //
+
 // start listening for requests
 app.listen(PORT, () => {
   console.log(`✅ Express is listening on port ${PORT}`);
