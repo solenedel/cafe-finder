@@ -2,7 +2,6 @@
 
 const express = require('express');
 const cookieSession = require('cookie-session');
-const crypto = require('crypto');
 // const { cafeSearchHelper } = require('./routes/searchRouter');
 // const axios = require('axios');
 
