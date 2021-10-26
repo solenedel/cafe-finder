@@ -6,7 +6,6 @@ import { colorVars } from './css-variables';
 export const StyledNav = styled(Nav)`
   background-color: ${colorVars.primaryDarkBrown};
   height: 90px;
-  color: ${colorVars.primaryLightBrown};
 
   & #nav-flexbox {
     display: flex;
@@ -14,14 +13,22 @@ export const StyledNav = styled(Nav)`
     padding-top: 15px;
   }
 
+  #logo-link {
+    color: ${colorVars.primaryLightBrown};
+    text-decoration: none;
+  }
+
   & ul {
     display: flex;
     justify-content: flex-end;
 
-    & li {
+    & li,
+    a {
       margin-right: 30px;
       font-size: 28px;
       transition: color 0.4s;
+      text-decoration: none;
+      color: ${colorVars.primaryLightBrown};
 
       &:hover {
         color: ${colorVars.pinkHover};

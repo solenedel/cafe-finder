@@ -1,7 +1,7 @@
 import React from 'react';
 
 // eslint-disable-next-line
-const LoginPage = ({ className }) => {
+export const LoginPage = ({ className }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
   };
@@ -43,5 +43,3 @@ const LoginPage = ({ className }) => {
     </main>
   );
 };
-
-export default LoginPage;
