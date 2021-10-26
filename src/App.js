@@ -18,9 +18,9 @@ function App() {
             <Route path="/">
               <StyledHomePage />
             </Route>
-            <Route path="/favourites">
+            {/* <Route path="/favourites">
               <StyledFavsPage />
-            </Route>
+            </Route> */}
             <Route path="/login">
               <StyledLoginPage />
             </Route>

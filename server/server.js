@@ -16,7 +16,7 @@ const db = new Pool(dbParams);
 db.connect(() => console.log('✅ connected to db'));
 
 // test query:
-db.query('SELECT * FROM users;').then((data) => console.log(data.rows));
+// db.query('SELECT * FROM users;').then((data) => console.log(data.rows));
 
 // Express configuration
 const app = express();
