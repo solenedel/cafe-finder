@@ -2,6 +2,7 @@
 
 const express = require('express');
 const cookieSession = require('cookie-session');
+const cors = require('cors');
 // const { cafeSearchHelper } = require('./routes/searchRouter');
 // const axios = require('axios');
 
@@ -36,6 +37,11 @@ app.use(
     maxAge: 24 * 60 * 60 * 1000,
   })
 );
+
+const corsOptions = {
+  origin: 'http://localhost:3000',
+};
+app.use(cors(corsOptions));
 
 // -------------------- Login / logout routes -------------------- //
 app.post('/login', (req, res) => {
