@@ -65,9 +65,9 @@ app.post('/login', (req, res) => {
         // check password
 
         if (bcrypt.compareSync(password, data.rows[0].password)) {
-          console.log('🔐 password correct: login successful');
+          console.log(`🔐 password correct: ${data.rows[0].username} has logged in`);
         } else {
-          console.log('🔐 PASSWORD INCORRECT');
+          console.log(`❌ PASSWORD INCORRECT for ${data.rows[0].username}`);
         }
       } else {
         console.log(`invalid email: ${email}`);

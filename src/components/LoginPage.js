@@ -4,13 +4,18 @@ import React, { useState } from 'react';
 // eslint-disable-next-line
 const LoginPage = ({ className }) => {
   const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
 
   // form submission to login
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    axios.post('/login', { email }).then((res) => {
+    axios.post('/login', { email, password }).then((res) => {
       console.log('res: ', res);
+
+      // set fields back to blank input
+      setEmail('');
+      setPassword('');
     });
   };
 
@@ -41,9 +46,9 @@ const LoginPage = ({ className }) => {
             placeholder="password"
             type="password"
             id="password"
-            // value={password}
-            // required
-            // onChange={(e) => setPassword(e.target.value)}
+            value={password}
+            required
+            onChange={(e) => setPassword(e.target.value)}
           />
         </div>
         <br />
