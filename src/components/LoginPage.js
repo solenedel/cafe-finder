@@ -5,6 +5,7 @@ import React, { useState } from 'react';
 const LoginPage = ({ className }) => {
   const [email, setEmail] = useState('');
 
+  // form submission to login
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -46,7 +47,7 @@ const LoginPage = ({ className }) => {
           />
         </div>
         <br />
-        <button type="submit" className="login-btn">
+        <button type="submit" className="login-btn" onClick={handleSubmit}>
           Login
         </button>
       </form>
