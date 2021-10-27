@@ -1,9 +1,16 @@
-import React from 'react';
+import axios from 'axios';
+import React, { useState } from 'react';
 
 // eslint-disable-next-line
 const LoginPage = ({ className }) => {
+  const [email, setEmail] = useState('');
+
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    axios.post('/login', { email }).then((res) => {
+      console.log('res: ', res);
+    });
   };
 
   return (
@@ -20,9 +27,9 @@ const LoginPage = ({ className }) => {
             placeholder="email"
             type="email"
             id="email"
-            // value={email}
-            // required
-            // onChange={(e) => setEmail(e.target.value)}
+            required
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
           />
         </div>
 
