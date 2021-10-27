@@ -3,6 +3,7 @@
 const express = require('express');
 const cookieSession = require('cookie-session');
 const cors = require('cors');
+
 // const { cafeSearchHelper } = require('./routes/searchRouter');
 // const axios = require('axios');
 
@@ -22,7 +23,7 @@ db.connect(() => console.log('✅ connected to db'));
 // Express configuration
 const app = express();
 const PORT = 8081;
-app.use(express.urlencoded({ extended: false }));
+app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 // create keys for cookies
@@ -57,23 +58,11 @@ app.post('/login', (req, res) => {
     if (err) res.send({ err });
     if (result) {
       res.send(result);
+      console.log('🔐 login successful');
     } else {
       res.send({ message: 'wrong email' });
     }
   });
-  // .then((data) => {
-  //   if (data.rows.length > 0) {
-  //     if (email === data.rows[0].email) {
-  //       console.log('email is a match');
-  //       res.json({ username: data.rows[0].username });
-  //     } else {
-  //       console.log('email not found');
-  //     }
-  //   }
-  // })
-  // .catch((err) => {
-  //   console.log(err);
-  // });
 });
 
 // ---------------------------------------------------------------- //
