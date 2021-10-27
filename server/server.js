@@ -3,7 +3,7 @@
 const express = require('express');
 const cookieSession = require('cookie-session');
 const cors = require('cors');
-
+const bcrypt = require('bcrypt');
 // const { cafeSearchHelper } = require('./routes/searchRouter');
 // const axios = require('axios');
 
@@ -45,6 +45,12 @@ const corsOptions = {
   origin: 'http://localhost:3000',
 };
 app.use(cors(corsOptions));
+
+// HASH FUNCTION: store hashed pw in database
+// bcrypt.hash('ENTER PASSWORD', 10, (err, hash) => {
+//   if (err) console.log(err);
+//   console.log('hash: ', hash);
+// });
 
 // -------------------- Login / logout routes -------------------- //
 

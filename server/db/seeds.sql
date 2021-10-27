@@ -1,16 +1,16 @@
 -- seeds for users table
 
-INSERT INTO users (username, email)
-VALUES ('Gary', 'gary@mail.com');
+INSERT INTO users (username, email, password)
+VALUES ('Gary', 'gary@mail.com', '$2b$10$XElmipvvwT8V5/.NsZ1FX.5QSFClu.0396xRYeoUhBL2Dmh84Uq1O');
 
-INSERT INTO users (username, email)
-VALUES ('Nally', 'nally@mail.com');
+INSERT INTO users (username, email, password)
+VALUES ('Nally', 'nally@mail.com', '$2b$10$ea.LB7u5eUcA5QuL5dOlDeK4G00TN1r3MbwZrIwrB.BKQWpPCrpKO');
 
-INSERT INTO users (username, email)
-VALUES ('Andy', 'andy@mail.com');
+INSERT INTO users (username, email, password)
+VALUES ('Andy', 'andy@mail.com', 'password');
 
-INSERT INTO users (username, email)
-VALUES ('James', 'james@mail.com');
+INSERT INTO users (username, email, password)
+VALUES ('James', 'james@mail.com', 'password');
 
 
 -- seeds for cafes table
