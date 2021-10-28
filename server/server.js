@@ -78,6 +78,8 @@ app.post('/login', (req, res) => {
       if (data.rows.length > 0) {
         // check password against database
         if (bcrypt.compareSync(password, data.rows[0].password)) {
+          req.session.user = data.rows[0].id;
+          res.json({ auth: true, username: data.rows[0].username });
           console.log(`🔐 password correct: ${data.rows[0].username} has logged in`);
         } else {
           console.log(`❌ Incorrect passworf for ${data.rows[0].username}`);
@@ -88,6 +90,7 @@ app.post('/login', (req, res) => {
       }
     })
     .catch((err) => {
+      req.session = null;
       console.log('res.json: ', res.json);
       console.log('ERROR: ', err);
     });
