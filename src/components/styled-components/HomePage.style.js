@@ -1,7 +1,7 @@
 /* eslint-disable import/prefer-default-export */
 import styled from 'styled-components';
 import { HomePage } from '../HomePage';
-import { colorVars, fontVars, mainButtonStyles } from './css-variables';
+import { colorVars, fontVars, mainButtonStyles, inputFieldStyles } from './css-variables';
 
 // styles for HomePage component
 // includes the google map, search form, etc
@@ -40,22 +40,18 @@ export const StyledHomePage = styled(HomePage)`
     margin: 50px 0 20px 0;
 
     & input {
-      height: 28px;
-      width: 200px;
-      border: none;
-      border-radius: 4px;
-      font-size: 18px;
-      color: ${colorVars.primaryDarkBrown};
-      transition: background-color 0.4s;
+      @include ${inputFieldStyles};
+      height: 30px;
 
       &:hover {
-        background-color: ${colorVars.mediumBrown};
+        background-color: ${colorVars.mediumPink};
         transition: background-color 0.4s;
       }
 
       &::placeholder {
         color: ${colorVars.primaryDarkBrown};
         opacity: 0.6;
+        padding-left: 5px;
       }
     }
 

@@ -31,6 +31,7 @@ const LoginPage = ({ className }) => {
 
   return (
     <main className={className} id="login-page-container">
+      <img src="./images/coffee-2.png" alt="coffee icon" />
       <p>Login</p>
       <div id="no-account">
         Don&rsquo;t have an account? Sign up <a href="/signup">here!</a>

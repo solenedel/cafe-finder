@@ -4,7 +4,7 @@ const colorVars = {
   primaryLightBrown: '#f2dcc4',
   pinkHover: '#fca4b5',
   darkPink: '#D88091',
-  mediumBrown: '#D7A484',
+  mediumPink: '#F6C2CC',
 };
 
 // fonts
@@ -26,9 +26,30 @@ const mainButtonStyles = {
 };
 
 // these styles are not working properly when imported as mixin
-const mainButtonHoverStyles = {
-  color: `${colorVars.pinkHover}`,
-  transition: `color 0.4s`,
+// const mainButtonHoverStyles = {
+//   color: `${colorVars.pinkHover}`,
+//   transition: `color 0.4s`,
+// };
+
+const inputFieldStyles = {
+  width: `180px`,
+  fontSize: `18px`,
+  marginLeft: `13px`,
+  marginBottom: `20px`,
+  border: `none`,
+  borderRadius: `4px`,
 };
 
-module.exports = { colorVars, fontVars, mainButtonStyles, mainButtonHoverStyles };
+// does not work
+// const inputFieldPlaceholderStyles = {
+//   color: `${colorVars.primaryDarkBrown}`,
+//   opacity: `0.6`,
+//   paddingLeft: `5px`,
+// };
+
+module.exports = {
+  colorVars,
+  fontVars,
+  mainButtonStyles,
+  inputFieldStyles,
+};
