@@ -7,6 +7,7 @@ import { AppContainer } from './components/styled-components/AppContainer';
 import { PageContainer } from './components/styled-components/PageContainer';
 import { StyledFooter } from './components/styled-components/Footer.style';
 import { StyledLoginPage } from './components/styled-components/LoginPage.style';
+import { FavsPage } from './components/FavsPage';
 import { AppContext } from './context';
 
 function App() {
@@ -26,9 +27,9 @@ function App() {
               <Route exact path="/">
                 <StyledHomePage />
               </Route>
-              {/* <Route path="/favourites">
-                <StyledFavsPage />
-              </Route> */}
+              <Route path="/favourites">
+                <FavsPage />
+              </Route>
               <Route exact path="/login">
                 <StyledLoginPage />
               </Route>
