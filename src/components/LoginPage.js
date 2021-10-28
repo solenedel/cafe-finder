@@ -1,17 +1,25 @@
 import axios from 'axios';
 import React, { useState } from 'react';
+import { useAppContext } from '../context';
 
 // eslint-disable-next-line
 const LoginPage = ({ className }) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-
+  const { userContext } = useAppContext();
+  // eslint-disable-next-line
+  const [user, setUser] = userContext;
   // form submission to login
   const handleSubmit = (e) => {
     e.preventDefault();
 
     axios.post('/login', { email, password }).then((res) => {
-      console.log('res: ', res);
+      console.log('response', res);
+      setUser((prev) => ({
+        ...prev,
+        auth: res.data.auth,
+        username: res.data.username,
+      }));
 
       // set fields back to blank input
       setEmail('');

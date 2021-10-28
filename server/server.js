@@ -53,6 +53,19 @@ bcrypt.hash('ENTER PASSWORD', 10, (err, hash) => {
 
 // -------------------- Login / logout routes -------------------- //
 
+// GET: login page
+app.get('/login', (req, res) => {
+  if (!req.session || !req.session.user) {
+    res.json({ auth: false });
+  } else {
+    const text = 'SELECT username FROM users WHERE id = $1';
+    const values = [req.session.user];
+    db.query(text, values).then((data) => {
+      res.json({ auth: true, username: data.rows[0].username });
+    });
+  }
+});
+
 // POST: login page
 app.post('/login', (req, res) => {
   const { email, password } = req.body;
@@ -81,12 +94,12 @@ app.post('/login', (req, res) => {
 });
 
 // POST: logout page
-app.post('/logout', (req) => {
+app.post('/logout', (req, res) => {
   console.log('user logged out');
 
   // clear session cookies:
   req.session = null;
-  // res.json({ auth: false });
+  res.json({ auth: false });
 });
 
 // ---------------------------------------------------------------- //

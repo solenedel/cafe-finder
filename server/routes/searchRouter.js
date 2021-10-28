@@ -32,7 +32,7 @@
 //     .then((data) => {
 //       const cafeResultsList = data.results.map((cafe) => {
 //         axios.get(
-//           `https://maps.googleapis.com/maps/api/place/${cafe.place_id}&key=${process.env.REACT_APP_API_KEY}`
+//           `s://maps.googleapis.com/maps/api/place/${cafe.place_id}&key=${process.env.REACT_APP_API_KEY}`
 //         );
 //         console.log('place_id: ', cafe.place_id);
 //         return Promise.all(cafeResultsList);

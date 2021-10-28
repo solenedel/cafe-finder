@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import { useAppContext } from '../context';
@@ -23,11 +23,25 @@ const Nav = ({ className }) => {
     });
   };
 
-  const LogoutButton = () => (
-    <Link to="/logout">
-      <li>Logout</li>
-    </Link>
-  );
+  const LogoutButton = () => {
+    return (
+      <>
+        {/* eslint-disable-next-line */}
+        <li className="desktop-menu-item" onClick={handleLogout}>{user.username}</li>
+      </>
+    );
+  };
+
+  // set user on login
+  useEffect(() => {
+    axios.get('/login').then((res) => {
+      setUser((prev) => ({
+        ...prev,
+        auth: res.data.auth,
+        username: res.data.username,
+      }));
+    });
+  }, []);
 
   return (
     <nav className={className}>
