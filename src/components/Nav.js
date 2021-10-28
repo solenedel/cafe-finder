@@ -20,6 +20,7 @@ const Nav = ({ className }) => {
         ...prev,
         auth: res.data.auth,
       }));
+      console.log(`User logged out`);
     });
   };
 
@@ -27,7 +28,7 @@ const Nav = ({ className }) => {
     return (
       <>
         {/* eslint-disable-next-line */}
-        <li className="desktop-menu-item" onClick={handleLogout}>{user.username}</li>
+        <li onClick={handleLogout}>Logout</li>
       </>
     );
   };

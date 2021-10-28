@@ -82,10 +82,9 @@ app.post('/login', (req, res) => {
           res.json({ auth: true, username: data.rows[0].username });
           console.log(`🔐 password correct: ${data.rows[0].username} has logged in`);
         } else {
-          console.log(`❌ Incorrect passworf for ${data.rows[0].username}`);
+          console.log(`❌ Incorrect password for ${data.rows[0].username}`);
         }
       } else {
-        console.log(`❌ invalid email: ${email}`);
         throw new Error(`❌ invalid email: ${email}`);
       }
     })

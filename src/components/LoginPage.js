@@ -1,5 +1,6 @@
 import axios from 'axios';
 import React, { useState } from 'react';
+import { useHistory } from 'react-router-dom';
 import { useAppContext } from '../context';
 
 // eslint-disable-next-line
@@ -9,6 +10,7 @@ const LoginPage = ({ className }) => {
   const { userContext } = useAppContext();
   // eslint-disable-next-line
   const [user, setUser] = userContext;
+  const history = useHistory();
   // form submission to login
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -25,6 +27,7 @@ const LoginPage = ({ className }) => {
       setEmail('');
       setPassword('');
     });
+    history.push('/'); // redirect to home page after login
   };
 
   return (
