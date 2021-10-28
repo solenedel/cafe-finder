@@ -53,6 +53,7 @@ bcrypt.hash('ENTER PASSWORD', 10, (err, hash) => {
 
 // -------------------- Login / logout routes -------------------- //
 
+// POST: login page
 app.post('/login', (req, res) => {
   const { email, password } = req.body;
   const queryText = 'SELECT password, id, username FROM users WHERE email = $1';
@@ -62,22 +63,30 @@ app.post('/login', (req, res) => {
   db.query(queryText, values)
     .then((data) => {
       if (data.rows.length > 0) {
-        // check password
-
+        // check password against database
         if (bcrypt.compareSync(password, data.rows[0].password)) {
           console.log(`🔐 password correct: ${data.rows[0].username} has logged in`);
         } else {
-          console.log(`❌ PASSWORD INCORRECT for ${data.rows[0].username}`);
+          console.log(`❌ Incorrect passworf for ${data.rows[0].username}`);
         }
       } else {
-        console.log(`invalid email: ${email}`);
-        throw new Error(`invalid email: ${email}`);
+        console.log(`❌ invalid email: ${email}`);
+        throw new Error(`❌ invalid email: ${email}`);
       }
     })
     .catch((err) => {
       console.log('res.json: ', res.json);
       console.log('ERROR: ', err);
     });
+});
+
+// POST: logout page
+app.post('/logout', (req) => {
+  console.log('user logged out');
+
+  // clear session cookies:
+  req.session = null;
+  // res.json({ auth: false });
 });
 
 // ---------------------------------------------------------------- //
