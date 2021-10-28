@@ -16,7 +16,6 @@ const LoginPage = ({ className }) => {
     e.preventDefault();
 
     axios.post('/login', { email, password }).then((res) => {
-      console.log('response', res);
       setUser((prev) => ({
         ...prev,
         auth: res.data.auth,
