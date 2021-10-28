@@ -1,12 +1,13 @@
 import React, { useEffect } from 'react';
 import axios from 'axios';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import { useAppContext } from '../context';
 
 // eslint-disable-next-line
 const Nav = ({ className }) => {
   const { userContext } = useAppContext();
   const [user, setUser] = userContext;
+  const history = useHistory();
 
   const LoginButton = () => (
     <Link to="/login">
@@ -22,6 +23,7 @@ const Nav = ({ className }) => {
       }));
       console.log(`User logged out`);
     });
+    history.push('/login');
   };
 
   const LogoutButton = () => {
