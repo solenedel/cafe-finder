@@ -39,6 +39,7 @@ export const FavsPage = ({ className }) => {
             <li>Organic coffee/tea: {fav.has_organic_tea_coffee ? 'yes' : 'no'}</li>
             <li>noise level: {fav.noise_level}</li>
           </ul>
+          <button type="submit">Remove</button>
         </div>
       );
     });

@@ -16,7 +16,8 @@ Find cafés near you, with ratings from other users. Save your favourite cafés 
 - search bar (home page)
 - radius option to map search (home page)
 - remove map options: satellite, keyboard shortcuts, etc (home page)
-
+- popup to warn user before they delete a cafe from the favourites
+- feature for the user to add their own notes for a cafe in their favourites
 
 ### resources 
 - [google maps react tutorial](https://www.youtube.com/watch?v=Pf7g32CwX_s)

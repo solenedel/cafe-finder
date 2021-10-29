@@ -14,9 +14,11 @@ export const StyledFavsPage = styled(FavsPage)`
 
   & h3 {
     font-size: 30px;
+    margin-bottom: 0;
   }
 
   & h4 {
+    margin-top: 10px;
     font-size: 25px;
     margin-left: 13px;
   }
@@ -57,6 +59,21 @@ export const StyledFavsPage = styled(FavsPage)`
     & ul {
       margin: none;
       padding: 13px;
+
+      & li {
+        font-size: 20px;
+        margin-bottom: 5px;
+      }
+    }
+
+    button {
+      color: ${colorVars.primaryDarkBrown};
+      background-color: ${colorVars.pinkHover};
+      font-size: 20px;
+      border-radius: 5px;
+      border: solid 3px ${colorVars.pinkHover};
+      margin-left: 13px;
+      margin-bottom: 10px;
     }
   }
 `;

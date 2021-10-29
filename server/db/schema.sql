@@ -22,7 +22,7 @@ CREATE TABLE cafes (
   is_open_24_hours BOOLEAN,
   has_organic_tea_coffee BOOLEAN,
   noise_level INTEGER,
-  seating_space INTEGER
+  seating_space INTEGER, 
 );
 -- NOTE: noise_level and seating_space are integers from 1 to 5 (stars system)
 
