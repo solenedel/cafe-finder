@@ -109,8 +109,9 @@ app.post('/logout', (req, res) => {
 // GET: favourites page (shows list of user's favs)
 app.get('/favourites', (req, res) => {
   if (req.session || req.session.user) {
-    const text = `SELECT favorites.*, users.id, users.username FROM favorites
+    const text = `SELECT favorites.*, cafes.*, users.* FROM favorites
                   JOIN users ON users.id = user_id
+                  JOIN cafes ON cafes.id = cafe_id
                   WHERE user_id = $1;`;
     const values = [req.session.user];
     db.query(text, values)

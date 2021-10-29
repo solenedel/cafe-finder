@@ -15,7 +15,7 @@ export const FavsPage = ({ className }) => {
     axios
       .get('/favourites')
       .then((res) => {
-        console.log(res.data);
+        console.log('res.data: ', res.data);
         setFavCafes(res.data);
       })
       .catch((err) => {
@@ -28,7 +28,19 @@ export const FavsPage = ({ className }) => {
     if (!favCafes.length) {
       return <p>You have not added any cafés to your favourites.</p>;
     }
-    return favCafes.map((fav) => <p>{fav.cafe_id}</p>);
+    return favCafes.map((fav) => {
+      return (
+        <div id="favCafeList">
+          <h4>{fav.cafe_name}</h4>
+          <ul>
+            <li>Wifi: {fav.has_wifi ? 'yes' : 'no'}</li>
+            <li>Open 24 hours: {fav.is_open_24_hours ? 'yes' : 'no'}</li>
+            <li>Organic coffee/tea: {fav.has_organic_tea_coffee ? 'yes' : 'no'}</li>
+            <li>noise level: {fav.noise_level}</li>
+          </ul>
+        </div>
+      );
+    });
   };
 
   return (

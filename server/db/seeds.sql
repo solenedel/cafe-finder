@@ -28,8 +28,16 @@ VALUES ('El Café Falso', true, false, false, 1, 1);
 
 -- seeds for favorites table
 
+-- user 1 is Gary (main demo user)
+
+INSERT INTO favorites (user_id, cafe_id)
+VALUES (1, 1);
+
 INSERT INTO favorites (user_id, cafe_id)
 VALUES (1, 2);
+
+INSERT INTO favorites (user_id, cafe_id)
+VALUES (1, 3);
 
 INSERT INTO favorites (user_id, cafe_id)
 VALUES (2, 3);
