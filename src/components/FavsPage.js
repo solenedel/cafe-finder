@@ -2,13 +2,13 @@ import React from 'react';
 import { useAppContext } from '../context';
 
 // eslint-disable-next-line
-export const FavsPage = ({ className, favCafes }) => {
+export const FavsPage = ({ className }) => {
   const { userContext } = useAppContext();
   // eslint-disable-next-line
   const [user, setUser] = userContext;
   // helper: show all of a user's favourite cafes
 
-  // const favCafes = [];
+  const favCafes = []; // temporary so react complies. replace as prop later
 
   const showFavCafes = () => {
     // eslint-disable-next-line

@@ -104,7 +104,25 @@ app.post('/logout', (req, res) => {
   res.json({ auth: false });
 });
 
-// ---------------------------------------------------------------- //
+// -------------------- Favourites routes -------------------- //
+
+// GET: favourites page (shows list of user's favs)
+app.get('/favourites', (req, res) => {
+  if (req.session || req.session.user) {
+    const text = 'SELECT * FROM favorites WHERE user_id = $1';
+    const values = [req.session.user];
+    db.query(text, values)
+      .then((results) => {
+        return res.status(200).send({
+          results: results.rows,
+        });
+      })
+      .catch((err) => {
+        console.log(err);
+        res.json([]);
+      });
+  }
+});
 
 // start listening for requests
 app.listen(PORT, () => {
