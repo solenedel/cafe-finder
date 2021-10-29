@@ -18,6 +18,7 @@ export const StyledFavsPage = styled(FavsPage)`
 
   & h4 {
     font-size: 25px;
+    margin-left: 13px;
   }
 
   & p {
@@ -30,9 +31,32 @@ export const StyledFavsPage = styled(FavsPage)`
 
   & #favCafeList {
     display: flex;
+    justify-content: flex-start;
     flex-wrap: wrap;
     padding-left: 50px;
-    border: solid blue 3px;
     width: 80vw;
+  }
+
+  & .favCafe {
+    border: solid ${colorVars.primaryDarkBrown} 3px;
+    background-color: ${colorVars.primaryLightBrown};
+    color: ${colorVars.primaryDarkBrown};
+    transition: background-color 0.5s;
+    transition: color 0.5s;
+    border-radius: 5px;
+    margin: 25px;
+    padding: 8px;
+
+    &:hover {
+      background-color: ${colorVars.primaryDarkBrown};
+      color: ${colorVars.primaryLightBrown};
+      transition: background-color 0.5s;
+      transition: color 0.5s;
+    }
+
+    & ul {
+      margin: none;
+      padding: 13px;
+    }
   }
 `;

@@ -31,7 +31,7 @@ export const FavsPage = ({ className }) => {
     }
     return favCafes.map((fav) => {
       return (
-        <div id="favCafe">
+        <div className="favCafe">
           <h4>{fav.cafe_name}</h4>
           <ul>
             <li>Wifi: {fav.has_wifi ? 'yes' : 'no'}</li>
