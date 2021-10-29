@@ -6,7 +6,7 @@ import { colorVars } from './css-variables';
 export const StyledFavsPage = styled(FavsPage)`
   color: ${colorVars.primaryDarkBrown};
   margin-top: 35px;
-  /* height: 100vh; */
+  min-height: 100vh;
   width: fit-content;
   display: flex;
   flex-direction: column;

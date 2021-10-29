@@ -12,6 +12,7 @@ import { AppContext } from './context';
 
 function App() {
   const [user, setUser] = useState({}); // start with no logged in users
+
   return (
     <AppContext.Provider
       value={{

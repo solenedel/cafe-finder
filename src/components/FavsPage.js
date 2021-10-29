@@ -50,7 +50,7 @@ export const FavsPage = ({ className }) => {
       <img src="./images/cafe-2.png" alt="cafe icon" />
       <h3>My favourite cafés</h3>
       <p>{!user.auth ? 'You must log in to see your favourite cafés.' : ''}</p>
-      <div id="favCafeList">{showFavCafes()}</div>
+      <div id="favCafeList">{user.auth ? showFavCafes() : ''}</div>
     </main>
   );
 };
