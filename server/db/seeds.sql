@@ -20,10 +20,10 @@ INSERT INTO cafes (cafe_name, has_wifi, is_open_24_hours, has_organic_tea_coffee
 VALUES ('The Fake Café', true, false, true, 3, 4);
 
 INSERT INTO cafes (cafe_name, has_wifi, is_open_24_hours, has_organic_tea_coffee, noise_level, seating_space)
-VALUES ('Le Faux Café', false, true, true, 5, 2);
+VALUES ('The Database Café', false, true, true, 5, 2);
 
 INSERT INTO cafes (cafe_name, has_wifi, is_open_24_hours, has_organic_tea_coffee, noise_level, seating_space)
-VALUES ('El Café Falso', true, false, false, 1, 1);
+VALUES ('Unreal Café', true, false, false, 1, 1);
 
 
 -- seeds for favorites table

@@ -1,3 +1,8 @@
+-- TO DO
+-- add thumbnail images, address (and website link?) to cafes table
+-- also add an "open now" field and use datetime to style ths 
+-- cafe according to if it's open or not
+
 DROP TABLE IF EXISTS users CASCADE;
 DROP TABLE IF EXISTS cafes CASCADE;
 DROP TABLE IF EXISTS favorites CASCADE;

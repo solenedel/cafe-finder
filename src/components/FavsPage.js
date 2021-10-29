@@ -23,6 +23,7 @@ export const FavsPage = ({ className }) => {
       });
   }, []);
 
+  // show a user's favourite cafes
   const showFavCafes = () => {
     // eslint-disable-next-line
     if (!favCafes.length) {
@@ -30,7 +31,7 @@ export const FavsPage = ({ className }) => {
     }
     return favCafes.map((fav) => {
       return (
-        <div id="favCafeList">
+        <div id="favCafe">
           <h4>{fav.cafe_name}</h4>
           <ul>
             <li>Wifi: {fav.has_wifi ? 'yes' : 'no'}</li>
@@ -48,7 +49,7 @@ export const FavsPage = ({ className }) => {
       <img src="./images/cafe-2.png" alt="cafe icon" />
       <h3>My favourite cafés</h3>
       <p>{!user.auth ? 'You must log in to see your favourite cafés.' : ''}</p>
-      {showFavCafes()}
+      <div id="favCafeList">{showFavCafes()}</div>
     </main>
   );
 };
