@@ -116,9 +116,7 @@ app.get('/favourites', (req, res) => {
     db.query(text, values)
       .then((results) => {
         console.log(results.rows);
-        return res.status(200).send({
-          results: results.rows,
-        });
+        res.json(results.rows);
       })
       .catch((err) => {
         console.log(err);
