@@ -1,27 +1,11 @@
-import axios from 'axios';
-import React, { useEffect, useState } from 'react';
-import { useAppContext } from '../context';
+import React from 'react';
 
 // eslint-disable-next-line
-export const AllFavCafes = ({ className }) => {
-  const { userContext } = useAppContext();
+export const AllFavCafes = (props) => {
   // eslint-disable-next-line
-  const [user, setUser] = userContext;
-  // helper: show all of a user's favourite cafes
-  const [favCafes, setFavCafes] = useState([]);
+  const { className, favCafes, removeFavCafe } = props;
 
-  // result.rows in express back end is equal to res.data in front end
-  useEffect(() => {
-    axios
-      .get('/favourites')
-      .then((res) => {
-        console.log('res.data: ', res.data);
-        setFavCafes(res.data);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  }, []);
+  console.log('favCafes: ', favCafes);
 
   // show a user's favourite cafes
   const showFavCafes = () => {
@@ -29,6 +13,7 @@ export const AllFavCafes = ({ className }) => {
     if (!favCafes.length) {
       return <p>You have not added any cafés to your favourites.</p>;
     }
+    // eslint-disable-next-line
     return favCafes.map((fav) => {
       return (
         <div className="favCafe">
@@ -39,33 +24,10 @@ export const AllFavCafes = ({ className }) => {
             <li>Organic coffee/tea: {fav.has_organic_tea_coffee ? 'yes' : 'no'}</li>
             <li>noise level: {fav.noise_level}</li>
           </ul>
-          <button type="submit">Remove</button>
+          <button type="button">Remove</button>
         </div>
       );
     });
   };
-
-  // delete a favourite by clicking on remove button
-  // eslint-disable-next-line
-  const removeFavCafe = (id) => {
-    axios
-      .delete(`/favourites/${id}`)
-      .then(() => {
-        console.log(`Successfully deleted favourite id ${id}`);
-
-        // Generate new list of fav cafes
-        const newFavCafes = showFavCafes.reduce((acc, fav) => {
-          if (fav.id === id) {
-            return acc;
-          }
-          acc.push(fav);
-          return acc;
-        }, []);
-        console.log('newFavCafes', newFavCafes);
-        setFavCafes(newFavCafes);
-      })
-      .catch((err) => console.log('error deleting list: ', err));
-  };
-
   return <div id="favCafeList">{user.auth ? showFavCafes() : ''}</div>;
 };
