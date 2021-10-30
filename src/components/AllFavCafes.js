@@ -39,15 +39,14 @@ export const AllFavCafes = ({ className }) => {
             <li>Organic coffee/tea: {fav.has_organic_tea_coffee ? 'yes' : 'no'}</li>
             <li>noise level: {fav.noise_level}</li>
           </ul>
-          <button type="submit" removeFavCafe={removeFavCafe()}>
-            Remove
-          </button>
+          <button type="submit">Remove</button>
         </div>
       );
     });
   };
 
   // delete a favourite by clicking on remove button
+  // eslint-disable-next-line
   const removeFavCafe = (id) => {
     axios
       .delete(`/favourites/${id}`)
