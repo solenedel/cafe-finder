@@ -1,10 +1,9 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { useAppContext } from '../context';
-import { AllFavCafes } from './AllFavCafes';
 
 // eslint-disable-next-line
-export const FavsPage = ({ className }) => {
+export const AllFavCafes = ({ className }) => {
   const { userContext } = useAppContext();
   // eslint-disable-next-line
   const [user, setUser] = userContext;
@@ -69,12 +68,5 @@ export const FavsPage = ({ className }) => {
       .catch((err) => console.log('error deleting list: ', err));
   };
 
-  return (
-    <main className={className} id="favs-page-container">
-      <img src="./images/cafe-2.png" alt="cafe icon" />
-      <h3>My favourite cafés</h3>
-      <p>{!user.auth ? 'You must log in to see your favourite cafés.' : ''}</p>
-      <AllFavCafes />
-    </main>
-  );
+  return <div id="favCafeList">{user.auth ? showFavCafes() : ''}</div>;
 };
