@@ -126,7 +126,25 @@ app.get('/favourites', (req, res) => {
   }
 });
 
-// start listening for requests
+// DELETE: remove a cafe from user's favourites
+app.delete('/:favId', (req, res) => {
+  if (req.session || req.session.user) {
+    const text = `DELETE * FROM favorites
+                  WHERE ID = $1
+                  RETURNING id;`;
+    const values = [req.params.favId];
+    db.query(text, values)
+      .then((data) => {
+        res.json({ deleted: data.rows });
+      })
+      .catch((err) => {
+        console.log('Error deleting list.', err);
+        res.json({ deleted: false });
+      });
+  }
+});
+// -------------------------------------------------------------------- //
+
 app.listen(PORT, () => {
   console.log(`✅ Express is listening on port ${PORT}`);
 
