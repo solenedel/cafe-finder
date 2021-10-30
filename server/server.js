@@ -116,7 +116,7 @@ app.get('/favourites', (req, res) => {
     const values = [req.session.user];
     db.query(text, values)
       .then((results) => {
-        console.log(results.rows);
+        // console.log(results.rows);
         res.json(results.rows);
       })
       .catch((err) => {
@@ -129,20 +129,24 @@ app.get('/favourites', (req, res) => {
 // DELETE: remove a cafe from user's favourites
 app.delete('/favourites/:favId', (req, res) => {
   if (req.session || req.session.user) {
-    const text = `DELETE * FROM favorites
-                  WHERE ID = $1
+    const text = `DELETE
+                  FROM favorites
+                  WHERE id = $1
                   RETURNING id;`;
     const values = [req.params.favId];
     db.query(text, values)
       .then((data) => {
+        console.log('☑️ DELETED fav (server side): ', res.json({ deleted: data.rows }));
         res.json({ deleted: data.rows });
       })
       .catch((err) => {
-        console.log('Error deleting list.', err);
+        console.log('❌ Error deleting fav (server side): ', err);
         res.json({ deleted: false });
       });
   }
 });
+
+// db.query(`SELECT * FROM favorites WHERE user.id = 1;`);
 // -------------------------------------------------------------------- //
 
 app.listen(PORT, () => {

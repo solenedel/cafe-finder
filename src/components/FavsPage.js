@@ -43,7 +43,7 @@ export const FavsPage = ({ className }) => {
         console.log('newFavCafes', newFavCafes);
         setFavCafes(newFavCafes);
       })
-      .catch((err) => console.log('error deleting list: ', err));
+      .catch((err) => console.log('❌ error deleting list (react): ', err));
   };
 
   return (
