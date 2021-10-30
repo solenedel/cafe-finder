@@ -8,7 +8,7 @@ export const FavsPage = ({ className }) => {
   const { userContext } = useAppContext();
   // eslint-disable-next-line
   const [user, setUser] = userContext;
-
+  // eslint-disable-next-line
   const [favCafes, setFavCafes] = useState([]);
 
   // result.rows in express back end is equal to res.data in front end
@@ -33,7 +33,7 @@ export const FavsPage = ({ className }) => {
         console.log(`Successfully deleted favourite id ${id}`);
 
         // Generate new list of fav cafes
-        const newFavCafes = showFavCafes.reduce((acc, fav) => {
+        const newFavCafes = favCafes.reduce((acc, fav) => {
           if (fav.id === id) {
             return acc;
           }
@@ -51,7 +51,7 @@ export const FavsPage = ({ className }) => {
       <img src="./images/cafe-2.png" alt="cafe icon" />
       <h3>My favourite cafés</h3>
       <p>{!user.auth ? 'You must log in to see your favourite cafés.' : ''}</p>
-      <AllFavCafes removeFavCafe={removeFavCafe} />
+      <AllFavCafes removeFavCafe={removeFavCafe} favCafes={favCafes} />
     </main>
   );
 };
