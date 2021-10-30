@@ -127,7 +127,7 @@ app.get('/favourites', (req, res) => {
 });
 
 // DELETE: remove a cafe from user's favourites
-app.delete('/:favId', (req, res) => {
+app.delete('/favourites/:favId', (req, res) => {
   if (req.session || req.session.user) {
     const text = `DELETE * FROM favorites
                   WHERE ID = $1

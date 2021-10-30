@@ -39,10 +39,33 @@ export const FavsPage = ({ className }) => {
             <li>Organic coffee/tea: {fav.has_organic_tea_coffee ? 'yes' : 'no'}</li>
             <li>noise level: {fav.noise_level}</li>
           </ul>
-          <button type="submit">Remove</button>
+          <button type="submit" removeFavCafe={removeFavCafe()}>
+            Remove
+          </button>
         </div>
       );
     });
+  };
+
+  // delete a favourite by clicking on remove button
+  const removeFavCafe = (id) => {
+    axios
+      .delete(`/favourites/${id}`)
+      .then(() => {
+        console.log(`Successfully deleted favourite id ${id}`);
+
+        // Generate new list of fav cafes
+        const newFavCafes = showFavCafes.reduce((acc, fav) => {
+          if (fav.id === id) {
+            return acc;
+          }
+          acc.push(fav);
+          return acc;
+        }, []);
+        console.log('newFavCafes', newFavCafes);
+        setFavCafes(newFavCafes);
+      })
+      .catch((err) => console.log('error deleting list: ', err));
   };
 
   return (
