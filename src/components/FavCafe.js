@@ -6,7 +6,7 @@ const FavCafe = (props) => {
 
   return (
     <div className="favCafe">
-      <h4>{(fav.cafe_name, fav.fav_id)}</h4>
+      <h4>{fav.cafe_name}</h4>
       <ul>
         <li>Wifi: {fav.has_wifi ? 'yes' : 'no'}</li>
         <li>Open 24 hours: {fav.is_open_24_hours ? 'yes' : 'no'}</li>
