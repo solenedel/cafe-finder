@@ -14,6 +14,7 @@ export const FavsPage = ({ className }) => {
   // result.rows in express back end is equal to res.data in front end
   useEffect(() => {
     axios
+      // get data from server side
       .get('/favourites')
       .then((res) => {
         console.log('res.data: ', res.data);
@@ -27,6 +28,7 @@ export const FavsPage = ({ className }) => {
   // delete a favourite by clicking on remove button
   // eslint-disable-next-line
   const removeFavCafe = (id) => {
+    // ⚠️ problem here: ids are all 1 so all favs are deleted at once ⚠️
     axios
       .delete(`/favourites/${id}`)
       .then(() => {
@@ -34,7 +36,7 @@ export const FavsPage = ({ className }) => {
 
         // Generate new list of fav cafes
         const newFavCafes = favCafes.reduce((acc, fav) => {
-          if (fav.id === id) {
+          if (fav.fav_id === id) {
             return acc;
           }
           acc.push(fav);

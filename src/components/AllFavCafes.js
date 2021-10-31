@@ -1,8 +1,8 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
+// import { v4 as uuidv4 } from 'uuid';
 import FavCafe from './FavCafe';
 import { useAppContext } from '../context';
-
 // eslint-disable-next-line
 export const AllFavCafes = (props) => {
   // eslint-disable-next-line
@@ -11,7 +11,12 @@ export const AllFavCafes = (props) => {
   // eslint-disable-next-line
   const [user, setUser] = userContext;
 
-  console.log('favCafes: ', favCafes);
+  // console.log('favCafes: ', favCafes);
+
+  // helper: generate unique key id for each fav
+  // const generateUUID = () => {
+  //   return uuidv4();
+  // };
 
   // show a user's favourite cafes
   const showFavCafes = () => {
@@ -21,8 +26,7 @@ export const AllFavCafes = (props) => {
 
     // eslint-disable-next-line
     return favCafes.map((fav) => {
-      console.log('fav.id', fav.id);
-      return <FavCafe key={fav.id} fav={fav} removeFavCafe={removeFavCafe} />;
+      return <FavCafe key={fav.fav_id} fav={fav} removeFavCafe={removeFavCafe} />;
     });
   };
 
