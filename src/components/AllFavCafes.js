@@ -21,6 +21,7 @@ export const AllFavCafes = (props) => {
 
     // eslint-disable-next-line
     return favCafes.map((fav) => {
+      console.log('fav.id', fav.id);
       return <FavCafe key={fav.id} fav={fav} removeFavCafe={removeFavCafe} />;
     });
   };

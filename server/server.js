@@ -146,7 +146,6 @@ app.delete('/favourites/:favId', (req, res) => {
   }
 });
 
-// db.query(`SELECT * FROM favorites WHERE user.id = 1;`);
 // -------------------------------------------------------------------- //
 
 app.listen(PORT, () => {
