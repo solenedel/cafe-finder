@@ -28,7 +28,12 @@ export const FavsPage = ({ className }) => {
   // delete a favourite by clicking on remove button
   // eslint-disable-next-line
   const removeFavCafe = (id) => {
-    // ⚠️ problem here: ids are all 1 so all favs are deleted at once ⚠️
+    if (window.confirm('Delete this favourite?')) {
+      console.log('user clicked confirm');
+    } else {
+      return;
+    }
+    // window.confirm('Are you sure you want to delete this favourite?');
     axios
       .delete(`/favourites/${id}`)
       .then(() => {
