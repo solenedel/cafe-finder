@@ -25,6 +25,12 @@ VALUES ('The Database Café', false, true, true, 5, 2);
 INSERT INTO cafes (cafe_name, has_wifi, is_open_24_hours, has_organic_tea_coffee, noise_level, seating_space)
 VALUES ('Unreal Café', true, false, false, 1, 1);
 
+INSERT INTO cafes (cafe_name, has_wifi, is_open_24_hours, has_organic_tea_coffee, noise_level, seating_space)
+VALUES ('Le Café', true, false, true, 2, 2);
+
+INSERT INTO cafes (cafe_name, has_wifi, is_open_24_hours, has_organic_tea_coffee, noise_level, seating_space)
+VALUES ('El Café', true, true, true, 1, 4);
+
 
 -- seeds for favorites table
 
@@ -38,6 +44,12 @@ VALUES (1, 2);
 
 INSERT INTO favorites (user_id, cafe_id)
 VALUES (1, 3);
+
+INSERT INTO favorites (user_id, cafe_id)
+VALUES (1, 4);
+
+INSERT INTO favorites (user_id, cafe_id)
+VALUES (1, 5);
 
 INSERT INTO favorites (user_id, cafe_id)
 VALUES (2, 3);
