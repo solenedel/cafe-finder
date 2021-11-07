@@ -37,7 +37,8 @@
     "dev": "concurrently \"cd server && nodemon server.js\" \"npm i && npm start\"",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "reset-db": "cd server && node reset-db.js"
   },
   "eslintConfig": {
     "extends": [

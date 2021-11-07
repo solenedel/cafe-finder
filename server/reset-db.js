@@ -21,7 +21,7 @@ db.connect();
 let sql = fs.readFileSync('./db/schema.sql', 'utf8');
 db.query(sql)
   .then(() => {
-    sql = fs.readFileSync('./db/seeds/seeds.sql', 'utf8');
+    sql = fs.readFileSync('./db/seeds.sql', 'utf8');
     return db.query(sql);
   })
   .then(() => {
