@@ -1,6 +1,5 @@
 import axios from 'axios';
 import React, { useState, useEffect } from 'react';
-import swal from 'sweetalert';
 import { useAppContext } from '../context';
 import { AllFavCafes } from './AllFavCafes';
 
@@ -29,13 +28,11 @@ export const FavsPage = ({ className }) => {
   // delete a favourite by clicking on remove button
   // eslint-disable-next-line
   const removeFavCafe = (id) => {
-    // if (window.confirm('Delete this favourite?')) {
-    //   console.log('user clicked confirm');
-    // } else {
-    //   return;
-    // }
-
-    swal('Hello world!');
+    if (window.confirm('Delete this favourite?')) {
+      console.log('user clicked confirm');
+    } else {
+      return;
+    }
 
     axios
       .delete(`/favourites/${id}`)
