@@ -1,19 +1,15 @@
 # ☕ Café finder
 
 Find cafés near you, with ratings from other users. Save your favourite cafés to a list for quick reference. 
- 
-## Dependencies
-- Styled components
-- React router
-- React google maps **(not google maps react)**
+
 
 ## Running the app
-- Run in development mode: `npm start`
+To run in development mode: `npm run dev`
+This sill start the node server as well as the react app.
 
  --- 
 
 ### To do 
-- search bar (home page)
 - radius option to map search (home page)
 - remove map options: satellite, keyboard shortcuts, etc (home page)
 - popup to warn user before they delete a cafe from the favourites
