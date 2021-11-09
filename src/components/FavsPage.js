@@ -1,6 +1,5 @@
 import axios from 'axios';
 import React, { useState, useEffect } from 'react';
-import styled from 'styled-components';
 import { useAppContext } from '../context';
 import { AllFavCafes } from './AllFavCafes';
 
@@ -11,22 +10,6 @@ export const FavsPage = ({ className }) => {
   const [user, setUser] = userContext;
   // eslint-disable-next-line
   const [favCafes, setFavCafes] = useState([]);
-
-  const ModalContainer = styled.div`
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-  `;
-
-  const ConfirmButton = styled.button`
-    min-width: 100px;
-    padding: 16px 32px;
-    border-radius: 4px;
-    border: none;
-    font-size: 24px;
-    cursor: pointer;
-  `;
 
   // result.rows in express back end is equal to res.data in front end
   useEffect(() => {

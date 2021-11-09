@@ -1,12 +1,10 @@
 import React from 'react';
-import styled from 'styled-components';
+// import styled from 'styled-components';
 
-const Modal = () => {
-  return (
-    <>
-      <div>Modal</div>
-    </>
-  );
+const Modal = (props) => {
+  // eslint-disable-next-line
+  const { showModal, setShowModal } = props;
+  return <>{showModal ? <div>Modal</div> : null}</>;
 };
 
 export default Modal;
